@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>python的常见错误 - A little bit more..</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="A little bit more.." />
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="python的常见错误"/>
+            <meta property="og:url" content="http://cha-messy.github.io/pythonde-chang-jian-cuo-wu.html"/>
+            <meta property="og:description" content=""/>
+            <meta property="article:published_time" content="2014-10-21" />
+                <meta property="article:section" content="Python" />
+                <meta property="article:author" content="coory" />
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://cha-messy.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://cha-messy.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://cha-messy.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cha-messy.github.io/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://cha-messy.github.io/" class="navbar-brand">
+A little bit more..            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://cha-messy.github.io/category/chaos.html">Chaos</a>
+                        </li>
+                        <li >
+                            <a href="http://cha-messy.github.io/category/emacs.html">Emacs</a>
+                        </li>
+                        <li >
+                            <a href="http://cha-messy.github.io/category/gong-ju.html">工具</a>
+                        </li>
+                        <li >
+                            <a href="http://cha-messy.github.io/category/mac.html">Mac</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://cha-messy.github.io/category/python.html">Python</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://cha-messy.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://cha-messy.github.io/pythonde-chang-jian-cuo-wu.html"
+                       rel="bookmark"
+                       title="Permalink to python的常见错误">
+                        python的常见错误
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-10-21T00:00:00"> Tue 21 October 2014</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>默认参数</h2>
+<blockquote>
+<p>函数对象只会产生一次,所以默认参数的赋值都只有一次，而不是每次调用都会产生一个新的函数对象，从而重新赋值默认参数。</p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="k">print</span> <span class="n">l</span>
+
+<span class="k">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="p">()</span>
+<span class="k">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="p">()</span> <span class="c"># 也许认为返回的是只有一长度的list</span>
+<span class="k">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c"># 传入参数时正常工作</span>
+<span class="k">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h3>A little bit more..</h3>
+<p>处理方法每个参数去判断是否为None再来初始化,参数多了那就是一大坨,但是有效,有没有更好呢？</p>
+<h2>动态属性&amp;&amp;类方法</h2>
+<blockquote>
+<p>如果没有特殊设置保护父类的属性防止修改，那么在没有自己申明这个属性的子类中就会因为不知何处发生的父类属性的修改而被影响到.因为子类访问自己未声明的属性的时候只是很简单的递归的往父类的上方查询,查到就调用</p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Parent</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">class</span> <span class="nc">Son</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Daughter</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">print</span> <span class="n">Parent</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Son</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Daughter</span><span class="o">.</span><span class="n">x</span>
+<span class="n">Son</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">print</span> <span class="n">Parent</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Son</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Daughter</span><span class="o">.</span><span class="n">x</span>
+<span class="n">Parent</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">print</span> <span class="n">Parent</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Son</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">Daughter</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</td></tr></table>
+
+<p>怎么预防？属性变量不允许动态改变？生成实例之后是不受这个影响的？问题的关键还是实例化之后是否自己改变？还有一个标准是有没有<code>__init__</code>方法</p>
+<p>@todo</p>
+<h2>作用域解析,legb规则</h2>
+<p>Local -&gt; Enclosing -&gt; Global -&gt; Built-in</p>
+<p>文章中的解释是:在一个作用域里面给一个变量赋值的时候，Python自动认为这个变量是这个作用域的本地变量，并屏蔽作用域外的同名的变量。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">print</span> <span class="n">x</span>
+<span class="c">#foo()</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">foo1</span><span class="p">():</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c"># works just fine</span>
+    <span class="k">print</span> <span class="n">l</span>
+<span class="n">foo1</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">foo2</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="k">print</span> <span class="n">l</span>
+<span class="n">foo2</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+<p>@todo</p>
+<p>赋值？ 只是变量名指向了同一个对象？不是指针(函数传递证明)，也不代表对象本身，(赋值的这个操作肯定有引用计数的加减,但是具体究竟是怎么个实现呢？)</p>
+<h2>闭包中绑定变量</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">create_multipliers</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">i</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">multiplier</span> <span class="ow">in</span> <span class="n">create_multipliers</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c"># expect: 0 2 4 6 8</span>
+<span class="c"># fact: 8 8 8 8 8</span>
+</pre></div>
+</td></tr></table>
+
+<p>文章中的解释这是由于Python的后期绑定（late binding）机制导致的，这是指在闭包中使用的变量的值，是在内层函数被调用的时候查找的。因此在上面的代码中，当任一返回函数被调用的时候，i的值是在它被调用时的周围作用域中查找（到那时，循环已经结束了，所以i已经被赋予了它最终的值4）。</p>
+<p>给出的解决方法:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">create_multipliers</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">multiplier</span> <span class="ow">in</span> <span class="n">create_multipliers</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h3>A little bit more</h3>
+<p>@todo</p>
+<p>那么问题来了,什么是闭包.</p>
+<p>上面得概念需要知道，但是这里实现的功能却不一定需要闭包的概念，下面是更加直觉的写法。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">multiplier_gen</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">i</span><span class="o">*</span><span class="n">x</span>
+<span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">multiplier_gen</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">mu</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h2>Reference</h2>
+<ul>
+<li><a href="http://blog.jobbole.com/68256/">python程序员常见的10个错误</a> </li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+
+
+
+                <li class="list-group-item"><a href="http://cha-messy.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group " id="tags">
+                        <li class="list-group-item tag-1">
+                            <a href="http://cha-messy.github.io/tag/gong-ju.html">
+                                工具
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/zsh.html">
+                                zsh
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/git.html">
+                                git
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/unicode.html">
+                                unicode
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/vi.html">
+                                vi
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/gtd.html">
+                                GTD
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/shell.html">
+                                shell
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/cheat-sheet.html">
+                                cheat-sheet
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/zhi-shi-ti-xi.html">
+                                知识体系
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/han-shu-shi.html">
+                                函数式
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/gc.html">
+                                gc
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/me.html">
+                                me
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/tmux.html">
+                                tmux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/webpy.html">
+                                web.py
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/fan-qie.html">
+                                番茄
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="http://cha-messy.github.io/tag/unittest.html">
+                                unittest
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 cha.messics
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://cha-messy.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://cha-messy.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://cha-messy.github.io/theme/js/respond.min.js"></script>
+
+</body>
+</html>

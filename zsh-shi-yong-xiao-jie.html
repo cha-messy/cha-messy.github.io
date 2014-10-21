@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>A little bit more..</title>
+    <title>zsh 使用小结 - A little bit more..</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,10 +12,14 @@
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="A little bit more.." />
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="A little bit more.."/>
-            <meta property="og:url" content="http://cha-messy.github.io"/>
-            <meta property="og:description" content="A little bit more.."/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="zsh 使用小结"/>
+            <meta property="og:url" content="http://cha-messy.github.io/zsh-shi-yong-xiao-jie.html"/>
+            <meta property="og:description" content=""/>
+            <meta property="article:published_time" content="2013-04-22" />
+                <meta property="article:section" content="工具" />
+                <meta property="article:tag" content="zsh" />
+                <meta property="article:author" content="coory" />
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://cha-messy.github.io/theme/css/bootstrap.min.css" type="text/css"/>
@@ -48,7 +52,7 @@ A little bit more..            </a>
                         <li >
                             <a href="http://cha-messy.github.io/category/emacs.html">Emacs</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://cha-messy.github.io/category/gong-ju.html">工具</a>
                         </li>
                         <li >
@@ -70,121 +74,89 @@ A little bit more..            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://cha-messy.github.io/pythonde-chang-jian-cuo-wu.html">python的常见错误</a></h2>
-                <div class="summary">
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/pythonde-chang-jian-cuo-wu.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/about-me.html">About me</a></h2>
-                <div class="summary"><p>@todo 放到导航栏的单独一页</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/about-me.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/guan-yu-bo-ke-de-ding-wei.html">关于博客的定位</a></h2>
-                <div class="summary"><p>兼谈我自己知识体系的建立,工具</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/guan-yu-bo-ke-de-ding-wei.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/shi-yong-gitde-jie-duan-xing-zong-jie.html">使用git的阶段性总结</a></h2>
-                <div class="summary"><p>开坑代填</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/shi-yong-gitde-jie-duan-xing-zong-jie.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/webpyyuan-ma-fen-xi.html">web.py源码分析</a></h2>
-                <div class="summary"><p>开坑代填,易读、易调,易改的好代码@todo</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/webpyyuan-ma-fen-xi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/chu-tan-pythonla-ji-hui-shou-suan-fa.html">初探python垃圾回收算法</a></h2>
-                <div class="summary"><p>gc似乎是现在语言的一个标配，最大程度的不需要关心内存的申请、释放，就是一个gc设计的初衷吧。</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/chu-tan-pythonla-ji-hui-shou-suan-fa.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/emacs-cheat-sheet.html">Emacs Cheat Sheet</a></h2>
-                <div class="summary"><p>常用、需要加深记忆的部分</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/emacs-cheat-sheet.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/han-shu-shi-bian-cheng-in-python.html">函数式编程 in python</a></h2>
-                <div class="summary"><p>开坑代填 @todo</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/han-shu-shi-bian-cheng-in-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/ming-ling-xing-lu-xian-tu.html">命令行路线图</a></h2>
-                <div class="summary"><p>命令行的积累只希望不是堆沙,基础的生存之上，是让你生活更美xiao好lv的工具,但是当一个工具有成千上百的选项的时候,花很多精力去记住那就一点都不美好了.. 那还是只知道怎么搜索manual就行了把..</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/ming-ling-xing-lu-xian-tu.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/unicode-in-python.html">Unicode in python</a></h2>
-                <div class="summary"><p>开坑代填 @todo</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/unicode-in-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/vide-sheng-cun-shou-ce.html">vi的生存手册</a></h2>
-                <div class="summary"><p>由于之前工作的关系，经常会需要用一些未经配置过的vi做源代码的查看、修改工作，所以需要在vi里面学会生存.ps:只是生存备忘..</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/vide-sheng-cun-shou-ce.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/da-zao-macxiao-lu-gong-zuo-huan-jing.html">打造Mac效率工作环境</a></h2>
-                <div class="summary"><p>GTD一位,效率嘛自娱自乐而已</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/da-zao-macxiao-lu-gong-zuo-huan-jing.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/gong-zuo-huan-jing-qian-yi-dao-mbp.html">工作环境迁移到MBP</a></h2>
-                <div class="summary"><p>这里只是一个迁移的大致的点的记录而已，具体的参考教程在最下面</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/gong-zuo-huan-jing-qian-yi-dao-mbp.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/pythondan-yuan-ce-shi-de-da-zhi-kuang-jia.html">python单元测试的大致框架</a></h2>
-                <div class="summary"><p>开坑代填,前端时间被安排单元测试设计,再不整理就都忘光了..</p>
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/pythondan-yuan-ce-shi-de-da-zhi-kuang-jia.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://cha-messy.github.io/tmux-shi-yong-ri-zhi.html">tmux 使用日志</a></h2>
-                <div class="summary">
-                    <a class="btn btn-default btn-xs" href="http://cha-messy.github.io/tmux-shi-yong-ri-zhi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://cha-messy.github.io/zsh-shi-yong-xiao-jie.html"
+                       rel="bookmark"
+                       title="Permalink to zsh 使用小结">
+                        zsh 使用小结
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-04-22T00:00:00"> Mon 22 April 2013</time>
+    </span>
 
-        <ul class="pagination">
-                <li class="prev disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a
-                            href="http://cha-messy.github.io/index.html">1</a></li>
-                    <li class=""><a
-                            href="http://cha-messy.github.io/index2.html">2</a></li>
-                <li class="next"><a
-                        href="http://cha-messy.github.io/index2.html">&raquo;</a></li>
-        </ul>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://cha-messy.github.io/tag/zsh.html">zsh</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>使用小结</h2>
+<ul>
+<li>首字母缩写感觉比较鸡肋.</li>
+</ul>
+<p>还得去花时间去想首字母，更多时候我连目录结构都忘了,这时候还是多按几个tab键吧.ps:如果需要在项目中那种复杂、使用频率又高的场景中，定义几个alias来快速定位才是简单实用的正途..</p>
+<ul>
+<li>更强大的参数补全.还是不能产生信任.</li>
+</ul>
+<p>比较常见的不可信任的场景,git的那些子命令的补全的时候经常不能按希望进行，而且还不知道从哪曝出一堆错，老老实实的记住常用的选项，不常用的功能也能在大脑里面形成一张功能对应查询词的表才是更可靠的方法吧。</p>
+<h2>安装</h2>
+<p>一向的意见:安装见官方,野路子无法比拟的覆盖平台的广度,常见问题的实用性..如果这个工具不是的话..那就准备好折腾吧.神爱世人..</p>
+<ul>
+<li>
+<p><a href="https://github.com/zsh-users/zsh">zsh</a></p>
+</li>
+<li>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh">oh my zsh</a> </p>
+</li>
+</ul>
+<h3>事件相关人事物</h3>
+<p>命令: <code>chsh</code></p>
+<p>文件: <code>/etc/passwd</code>, <code>~/.zshrc</code></p>
+<h2>下一步</h2>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview">oh-my-zsh 那些插件们</a></p>
+<h2>update</h2>
+<p>@Tue Oct 14 2014</p>
+<p>经历了Debian-&gt;Mac的迁移和bash漏洞的洗礼，oh-my-zsh的使用更加符合我对他的定位，就是一个现在我能找到功能还处在不断发展中(至少是有不少人讨论)，bash的替代品。<code>不折腾(尽量..)，有新料(不能否认的是，有人玩的话，查问题会比较容易)，核心功能足够用，对于一个工具使用者，这些就够了.</code></p>
+<h2>Reference</h2>
+<ul>
+<li>
+<p><a href="http://blog.longwin.com.tw/2011/10/macosx-shell-zsh-2011/">Tsung's blog</a></p>
+</li>
+<li>
+<p><a href="http://www.kafeitu.me/shell/2012/03/25/oh-my-zsh.html">我最喜爱的工具oh my zsh</a> </p>
+</li>
+<li>
+<p><a href="http://www.gentoo.org/doc/zh_cn/zsh.xml">Gentoo linux文档</a> </p>
+</li>
+<li>
+<p><a href="http://lostjs.com/2012/09/27/zsh/">使用 Zsh 的九个理由</a> </p>
+</li>
+<li>
+<p><a href="http://linuxtoy.org/archives/zsh.html">终极Shell——Zsh</a> </p>
+</li>
+<li>
+<p><a href="http://www.acm.uiuc.edu/workshops/zsh/toc.html">Zsh Workshop: Table of Contents</a> </p>
+</li>
+<li>
+<p><a href="http://www.cyberciti.biz/faq/howto-set-bash-as-your-default-shell/">Setting bash as default shell</a> (设置默认shell)</p>
+</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 
